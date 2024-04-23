@@ -1,0 +1,66 @@
+//users is table name
+
+insert single object
+db.users.insert({
+    name:"Jon",
+    address:"Sydney",
+    number:12345
+})
+==================================================
+insertMany objects
+db.users.insertMany([
+    {
+        name:"Jon",
+        address:"Sydney",
+        number:12345
+    },
+    {
+        name:"Doe",
+        address:"Sydney",
+        number:12345
+    },
+    {
+        name:"Andy",
+        address:"Sydney",
+        number:12345
+    }, 
+    {
+        name:"Samm",
+        address:"Sydney",
+        number:12345
+    }, 
+    {
+        name:"Samm",
+        address:"Sydney",
+        number:12345
+    } 
+])
+==================================================
+delete one object
+db.users.deleteOne({name:"Jon"})
+==================================================
+delete multiple object
+db.users.deleteMany({name:"Jon"})
+==================================================
+find object
+db.users.findOne({name:"Jon"})
+==================================================
+find all objects
+db.users.find({name:"Jon"})
+==================================================
+find object
+db.users.find({name:"Jon"}, {})
+========================================================================
+update one
+db.users.updateOne({name:"Andy"}, {$set: {address:"Melbourne"}})
+========================================================================
+update many
+db.users.updateMany({name:"Jon"}, {$set: {address:"Melbourne"}})
+
+
+
+
+data coming in body or  query or params??
+req.body 
+req.param 
+req.query
