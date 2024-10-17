@@ -17,6 +17,10 @@ app.use(express.json());
 
 app.use("/api/v1/tasks", taskRouter);
 
+app.get("/", (req, res) => {
+  res.json({ message: "Server Live..." });
+});
+
 connectMongo();
 
 app.listen(PORT, (error) => {
